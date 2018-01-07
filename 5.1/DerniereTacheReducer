@@ -1,0 +1,48 @@
+package cs.Lab2.WordCount;
+
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+
+import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapreduce.Reducer;
+import org.apache.hadoop.mapreduce.Reducer.Context;
+
+
+
+public class DerniereTacheReducer extends Reducer< Text, Text, Text, Text> {
+
+    // Overriding of the reduce function
+
+    @Override
+    protected void reduce(Text key, Iterable <Text> values, Context context) throws IOException,InterruptedException{
+
+    Map<String, String> Dictionnaire= new HashMap<String, String>();
+    int n = 0;
+    int N = 2;
+    for (Text datas : values)
+    {
+    	String Numb = datas.toString().split("=")[1];
+    	String Doc = datas.toString().split("=")[0];
+    	n ++;
+    	Dictionnaire.put(Doc, Numb);
+    }
+    
+    for (String Doc : Dictionnaire.keySet())
+    {
+    	Double Occurence = Double.valueOf(Dictionnaire.get(Doc).split("/")[0]);
+    	Double NBWord = Double.valueOf(Dictionnaire.get(Doc).split("/")[1]);
+    	
+    	double tf = Occurence / NBWord; // Compute the TF
+    	double idf = N / n;  // Compute the idf
+    	double tdidf = tf * Math.max(1.0, Math.log10(idf));  // if Idf is equal to 1, we take log -> 1
+    	context.write(new Text(key + " in " + Doc), new Text("TF IDF is " + tdidf)); // The final output
+    }
+    
+    }
+
+}
+
+
