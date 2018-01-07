@@ -1,0 +1,104 @@
+La MainFunction correspond a la fonction principale qu'on lance. (chargement du fichier arbres et sortie des caracteritiques des arbres)
+
+La SubFunction correpond aux caracteristiques des arbres qu'on veut sortir.
+
+Exemple : dans la fonction sub on veut l'annee et la hauteur. Le output dans la Mainfunction est alors :
+
+Annee : ANNEE PLANTATION Hauteur HAUTEUR
+Annee : 1935 Hauteur 13.0
+Annee : 1854 Hauteur 20.0
+Annee : 1862 Hauteur 22.0
+Annee : 1906 Hauteur 16.0
+Annee : 1784 Hauteur 30.0
+Annee : 1860 Hauteur 45.0
+Annee : 1840 Hauteur 40.0
+Annee : 1933 Hauteur 16.0
+Annee :  Hauteur 30.0
+Annee : 1913 Hauteur 33.0
+Annee :  Hauteur 30.0
+Annee :  Hauteur 35.0
+Annee : 1862 Hauteur 35.0
+Annee :  Hauteur 12.0
+Annee : 1850 Hauteur 30.0
+Annee :  Hauteur 10.0
+Annee : 1857 Hauteur 10.0
+Annee : 1882 Hauteur 27.0
+Annee : 1872 Hauteur 
+Annee :  Hauteur 30.0
+Annee : 1843 Hauteur 26.0
+Annee : 1872 Hauteur 18.0
+Annee : 1845 Hauteur 28.0
+Annee : 1930 Hauteur 20.0
+Annee :  Hauteur 10.0
+Annee : 1870 Hauteur 25.0
+Annee : 1601 Hauteur 11.0
+Annee :  Hauteur 12.0
+Annee : 1879 Hauteur 22.0
+Annee : 1850 Hauteur 20.0
+Annee :  Hauteur 35.0
+Annee : 1894 Hauteur 18.0
+Annee :  Hauteur 30.0
+Annee : 1935 Hauteur 30.0
+Annee : 1873 Hauteur 10.0
+Annee : 1862 Hauteur 34.0
+Annee : 1833 Hauteur 12.0
+Annee :  Hauteur 35.0
+Annee :  Hauteur 18.0
+Annee : 1897 Hauteur 14.0
+Annee : 1850 Hauteur 30.0
+Annee : 1872 Hauteur 40.0
+Annee : 1882 Hauteur 30.0
+Annee : 1859 Hauteur 30.0
+Annee : 1900 Hauteur 16.0
+Annee : 1862 Hauteur 35.0
+Annee : 1930 Hauteur 22.0
+Annee : 1870 Hauteur 5.0
+Annee : 1871 Hauteur 25.0
+Annee : 1875 Hauteur 14.0
+Annee : 1860 Hauteur 15.0
+Annee : 1935 Hauteur 15.0
+Annee : 1905 Hauteur 2.0
+Annee : 1879 Hauteur 20.0
+Annee : 1895 Hauteur 23.0
+Annee : 1829 Hauteur 30.0
+Annee : 1895 Hauteur 10.0
+Annee :  Hauteur 12.0
+Annee : 1862 Hauteur 30.0
+Annee : 1857 Hauteur 27.0
+Annee : 1945 Hauteur 20.0
+Annee : 1880 Hauteur 20.0
+Annee : 1905 Hauteur 30.0
+Annee :  Hauteur 6.0
+Annee : 1868 Hauteur 15.0
+Annee : 1906 Hauteur 12.0
+Annee : 1815 Hauteur 31.0
+Annee : 1860 Hauteur 42.0
+Annee : 1935 Hauteur 12.0
+Annee :  Hauteur 14.0
+Annee : 1814 Hauteur 31.0
+Annee : 1900 Hauteur 20.0
+Annee : 1895 Hauteur 25.0
+Annee :  Hauteur 20.0
+Annee : 1772 Hauteur 13.0
+Annee : 1782 Hauteur 30.0
+Annee : 1840 Hauteur 30.0
+Annee :  Hauteur 22.0
+Annee : 1893 Hauteur 18.0
+Annee : 1865 Hauteur 25.0
+Annee : 1882 Hauteur 20.0
+Annee :  Hauteur 15.0
+Annee : 1814 Hauteur 20.0
+Annee : 1865 Hauteur 20.0
+Annee : 1939 Hauteur 25.0
+Annee : 1852 Hauteur 30.0
+Annee :  Hauteur 20.0
+Annee : 1907 Hauteur 9.0
+Annee : 1847 Hauteur 40.0
+Annee : 1859 Hauteur 25.0
+Annee :  Hauteur 12.0
+Annee : 1852 Hauteur 30.0
+Annee : 1863 Hauteur 12.0
+Annee : 1896 Hauteur 16.0
+Annee : 1918 Hauteur 32.0
+Annee : 1860 Hauteur 22.0
+Annee : 1870 Hauteur 15.0
