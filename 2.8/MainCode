@@ -1,0 +1,58 @@
+package cs.bigdata.Tutorial2;
+
+
+import java.io.*;
+import java.util.Arrays;
+
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.fs.*;
+import org.apache.hadoop.io.IOUtils;
+
+
+
+public class CompterLigneFile {
+
+	public static void main(String[] args) throws IOException {
+				//Open the file
+		Configuration conf = new Configuration();
+		String url = "/home/cloudera/isd-history.txt";
+		FileSystem fs = FileSystem.get(conf);
+		InputStream in = null;
+		
+		try{
+			in = fs.open(new Path(url));
+			InputStreamReader isr = new InputStreamReader(in);
+			BufferedReader br = new BufferedReader(isr);
+			
+			// read line by line
+			String line = br.readLine();
+			int i = 0;
+			while (line !=null){
+				// Process of the current line
+
+				String array[] = line.split("");
+				if (i > 22){
+				String Name[] = Arrays.copyOfRange(array, 14, 43);
+				String Country[] = Arrays.copyOfRange(array, 44, 46);
+				String Elevation[] = Arrays.copyOfRange(array, 75, 82);
+				String UsafArray[] = Arrays.copyOfRange(array, 1, 7);
+					System.out.println(" Usaf " + Arrays.toString(UsafArray));
+					System.out.println(" Name " + Arrays.toString(Name));
+					System.out.println(" Country " + Arrays.toString(Country));
+					System.out.println(" Elevation " + Arrays.toString(Elevation));
+
+				}
+				i ++;
+				line = br.readLine();
+			}
+		}
+		finally{
+			//close the file
+			IOUtils.closeStream(in);
+		}
+ 
+		
+		
+	}
+
+}
