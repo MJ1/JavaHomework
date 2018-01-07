@@ -1,0 +1,8 @@
+Explication des codes du TF-IDF
+
+On va utiliser trois Map-Reduce de suite pour sortir le TFIDF :
+  - Le premier tour de MAP Reduce va nous permettre de donner le nombre d'occurence de chaque mot dans chaque document. 
+  On retire la ponctuation. De plus, pour bien differencier les deux documents, chacun a son propre Mapper via MultipleInputs.addInputPath.
+  Par contre il y a un seul driver et un seul reducer
+  
+  -
