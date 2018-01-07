@@ -1,0 +1,45 @@
+package cs.Lab2.WordCount;
+
+import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.io.*;        
+import org.apache.hadoop.mapreduce.Mapper;
+import org.apache.hadoop.mapreduce.lib.input.FileSplit;
+
+import java.io.IOException;
+import java.util.StringTokenizer;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+
+public class FirstTaskMapper extends Mapper<Object, Text, Text, IntWritable> {
+	
+	private final static IntWritable one = new IntWritable(1);
+		
+	@Override
+	
+	
+	public void map(Object key, Text value, Context context) throws IOException, InterruptedException{
+		StringTokenizer tok = new StringTokenizer(value.toString(), " ");
+				
+
+		while (tok.hasMoreTokens())
+		{
+		    
+			Text word = new Text(tok.nextToken());
+			String newword = word.toString().toLowerCase();
+			
+			String[] newword2 = newword.split("[\\p{Punct}\\s]+");
+
+			for(String s: newword2){
+				StringBuilder WordInt = new StringBuilder();
+				WordInt.append(s);
+				WordInt.append("@");
+				WordInt.append("defoerobinson103");  // Adding the name of the doc to the word
+							
+				context.write(new Text(WordInt.toString()), one);
+
+			}
+		}
+	}
+	
+}
