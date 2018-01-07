@@ -23,3 +23,23 @@ yukon@defoerobinson103	7/32461
   sinon on aurait un TF-IDF de 0 pour ces mots. On peut alors sortir le TF et le IDF puis le TF-IDF.
   les 20 mots avec les plus grands TF-IDF sont :
   
+the	in	defoerobinson103	TF	IDF	is	0.07017652
+the	in	callwild	TF	IDF	is	0.048196611
+and	in	defoerobinson103	TF	IDF	is	0.047195096
+i	in	callwild	TF	IDF	is	0.042099499
+and	in	callwild	TF	IDF	is	0.039353346
+to	in	callwild	TF	IDF	is	0.035234118
+of	in	callwild	TF	IDF	is	0.028859121
+of	in	defoerobinson103	TF	IDF	is	0.026863005
+he	in	defoerobinson103	TF	IDF	is	0.025107052
+was	in	defoerobinson103	TF	IDF	is	0.021410308
+to	in	defoerobinson103	TF	IDF	is	0.020794184
+a	in	defoerobinson103	TF	IDF	is	0.020332091
+a	in	callwild	TF	IDF	is	0.018634606
+my	in	callwild	TF	IDF	is	0.017506722
+his	in	defoerobinson103	TF	IDF	is	0.017282277
+in	in	defoerobinson103	TF	IDF	is	0.016604541
+was	in	callwild	TF	IDF	is	0.016476915
+in	in	callwild	TF	IDF	is	0.015831242
+that	in	callwild	TF	IDF	is	0.015447108
+it	in	callwild	TF	IDF	is	0.01507932
