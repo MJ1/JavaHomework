@@ -18,3 +18,8 @@ attended@defoerobinson103	1/32461
 yukon@defoerobinson103	7/32461
 
   
+  - Dans le troisieme tour de MapReduce (DerniereTache), on calcule le TF-IDF final. On commence par voir dans combien de document un mot est present
+  (soit 1 soit 2).Dans notre reducuer nous considerons que si le mot  est present dans tous les documents, on remplace le "log(1)" par 1 tout simplement 
+  sinon on aurait un TF-IDF de 0 pour ces mots. On peut alors sortir le TF et le IDF puis le TF-IDF.
+  les 20 mots avec les plus grands TF-IDF sont :
+  
