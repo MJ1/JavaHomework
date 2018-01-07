@@ -1,0 +1,22 @@
+package cs.bigdata.Tutorial2;
+
+import java.io.BufferedInputStream;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.fs.FileSystem;
+
+public class Tree {
+	
+	public static void rdline(String line) {
+		
+		String array[] = line.split(";");
+		
+		System.out.println("Annee : " + array[5] + " Hauteur " + array[6]);
+		
+		
+	}
+
+}
