@@ -1,0 +1,38 @@
+package cs.Lab2.WordCount;
+
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+
+import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapreduce.Reducer;
+import org.apache.hadoop.mapreduce.Reducer.Context;
+
+
+public class HeightArbresReducer extends Reducer< Text, IntWritable, Text, Text> {
+
+    // Overriding of the reduce function
+
+    @Override
+
+    protected void reduce(Text key, Iterable <IntWritable> values, Context context) throws IOException,InterruptedException{
+    	
+    	
+    	Iterator<IntWritable> i = values.iterator();
+
+    	double maxHeight= 0.0;
+    	
+    	while(i.hasNext())
+    	{
+    		maxHeight = Math.max(maxHeight, i.next().get());
+    	}
+		context.write(key, new Text(String.valueOf(maxHeight)));
+
+
+    }
+
+}
+
+
