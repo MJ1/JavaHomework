@@ -1,8 +1,20 @@
 Explication des codes du TF-IDF
 
 On va utiliser trois Map-Reduce de suite pour sortir le TFIDF :
-  - Le premier tour de MAP Reduce va nous permettre de donner le nombre d'occurence de chaque mot dans chaque document. 
+  - Le premier tour de MAPReduce (FirstTask) va nous permettre de donner le nombre d'occurence de chaque mot dans chaque document. 
   On retire la ponctuation. De plus, pour bien differencier les deux documents, chacun a son propre Mapper via MultipleInputs.addInputPath.
   Par contre il y a un seul driver et un seul reducer
+  Le outout de ce premier map reduce est (on prend deux lignes en exemple ):
   
-  -
+youth@callwild	2
+youth@defoerobinson103	1
+  
+  - Dans ce deuxieme tour de MapReduce (SecondTask), on sort la frequence de chaque mot dans chaque document i.e. le nombre d'occurence du mot
+  dans un document par rapport au nombre de mots de ce document. Le input est le txt sorti dans le MapReduce precedent.
+  Le output sera un txt :
+clapping@callwild	1/122353
+busied@callwild	1/122353
+attended@defoerobinson103	1/32461
+yukon@defoerobinson103	7/32461
+
+  
