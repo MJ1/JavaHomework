@@ -1,0 +1,44 @@
+package cs.Lab2.WordCount;
+
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+
+import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapreduce.Reducer;
+import org.apache.hadoop.mapreduce.Reducer.Context;
+
+
+public class SecondTaskReducer extends Reducer< Text, Text, Text, Text> {
+
+    // Overriding of the reduce function
+
+    @Override
+    protected void reduce(Text key, Iterable <Text> values, Context context) throws IOException,InterruptedException{
+    	
+    	int N = 0;
+    	
+    	Map<String, Integer> Dictionnaire= new HashMap<String, Integer>();  // Similar to a python dic
+    	for (Text datas : values)
+    	{
+    		
+    		String[] WordNumb = datas.toString().split("=");
+    		int Numb = Integer.parseInt(WordNumb[1]);
+    		String word = WordNumb[0];
+    		Dictionnaire.put(word, Numb);
+
+    		N += Numb;
+    	}
+    	
+    	for(String word : Dictionnaire.keySet())
+    	{
+    		context.write(new Text(word + "@" + key.toString()), new Text(Dictionnaire.get(word) + "/" + N));
+    	}
+
+    }
+
+}
+
+
