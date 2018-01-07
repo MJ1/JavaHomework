@@ -1,0 +1,36 @@
+package cs.Lab2.WordCount;
+
+import org.apache.hadoop.io.*;        
+import org.apache.hadoop.mapreduce.Mapper;
+
+import java.io.IOException;
+import java.util.StringTokenizer;
+
+
+public class HeightArbresMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
+	
+
+	//	private Text word = new Text();
+	
+	@Override
+	
+	public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException{
+		try{
+			if(key.get() ==0 && value.toString().contains("CIRCONFERENCE"))
+				return;
+			else{
+				String[] Ligne = value.toString().split(";");
+				String Type = Ligne[2];
+				double Height = Double.parseDouble(Ligne[6]);
+				int Height2 = (int) Height;
+				context.write(new Text(Type), new IntWritable(Height2));
+
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		
+		
+	}
+	
+}
